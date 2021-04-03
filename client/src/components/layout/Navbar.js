@@ -6,6 +6,20 @@ import PropTypes from 'prop-types'
 const Navbar = ({ auth: { isAuthenticated, user, loading }, logout }) => {
   const authlinks = (
     <ul>
+      <img
+        className='round-img'
+        style={{
+          width: '20px',
+          position: 'absolute',
+          marginLeft: '-17px',
+        }}
+        src={user && user.avatar}
+      />
+      <li>
+        <a href='/dashboard'>
+          <span className='hide-sm '>{user && user.name}</span>
+        </a>
+      </li>
       <li>
         <Link to='/profiles'>Developers</Link>
       </li>
